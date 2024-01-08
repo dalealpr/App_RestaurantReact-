@@ -1,0 +1,17 @@
+.contSecciones{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .cont-Sec{
+        height: 1550px;
+        padding: 15px 25px;
+        border: 1px solid rgb(125, 125, 125);
+
+        .titleSec{
+            color: white;
+            font-size: 22px;
+        }
+
+    }
+}

@@ -1,0 +1,65 @@
+.contHorNav{
+    height: 55px;
+    padding: 0 15px;
+    top: 245px;
+    border: 1px solid white;
+    background-color: var(--color-background-primary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &.fixed {
+        width: 95%;
+        position: fixed;
+        top: 51px;
+        left: 0;
+        z-index: 1;        
+      }
+
+    .navUl{
+        display: flex;
+        overflow-y: auto;
+        gap: 15px;
+
+        .navLi{
+            flex-shrink: 0;
+            
+            .navLink{
+                height: 33px;
+                padding: 2px 12px;
+                font-weight: 500;
+                color: white;
+                border-radius: 25px;
+                font-size: 15px;
+                border:  1px solid white;
+                cursor: pointer;
+                
+                display: flex;
+                align-items: center;
+
+            }
+            
+        }
+        
+        .navLi .active {
+            height: 33px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            background-color: var(--color-background-secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            border:none;
+    
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    
+}
+
+::-webkit-scrollbar{
+    display: none
+    }
