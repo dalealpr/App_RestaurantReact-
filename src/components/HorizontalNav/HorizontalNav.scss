@@ -12,7 +12,7 @@
     &.fixed {
         width: 95%;
         position: fixed;
-        top: 51px;
+        top: 50px;
         left: 0;
         z-index: 1;        
       }
@@ -22,10 +22,12 @@
         overflow-y: auto;
         gap: 15px;
 
-        .navLi{
-            flex-shrink: 0;
-            
-            .navLink{
+        .nav-item{
+
+
+
+            .nav-link{
+                width: max-content;
                 height: 33px;
                 padding: 2px 12px;
                 font-weight: 500;
@@ -34,15 +36,13 @@
                 font-size: 15px;
                 border:  1px solid white;
                 cursor: pointer;
-                
+
                 display: flex;
                 align-items: center;
-
             }
-            
         }
         
-        .navLi .active {
+        .nav-item .active {
             height: 33px;
             font-weight: 500;
             color: rgb(0, 0, 0);
