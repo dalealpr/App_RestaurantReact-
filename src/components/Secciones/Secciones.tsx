@@ -1,18 +1,24 @@
 import "./Secciones.scss";
-import secciones from "../../json/Json";
+import datos from "../../json/Json";
+import Card from "../Card/Card";
 
 function Secciones() {
   return (
     <div className="contSecciones">
-      {secciones.map((seccion, index: number) => (
+      {datos.secciones.map((seccion, index: number) => (
         <div key={seccion.id} className="cont-Sec" id={`categoria${index}`}>
           <h3 className="titleSec">{seccion.nombre}</h3>
-          <p style={{ color: "white", fontSize: "16px", marginTop: "15px" }}>
-            Plato 1
-          </p>
-          <p style={{ color: "white", fontSize: "16px" }}>Plato 2</p>
-          <p style={{ color: "white", fontSize: "16px" }}>Plato 3</p>
-          <p style={{ color: "white", fontSize: "16px" }}>Plato 4</p>
+          {datos.carta[seccion.key as keyof typeof datos.carta]?.map(
+            (plato) => (
+              <Card
+                key={plato.id}
+                title={plato.nombre}
+                description={plato.descripcion}
+                price={plato.precio}
+                imgSrc={plato.img}
+              />
+            )
+          )}
         </div>
       ))}
     </div>

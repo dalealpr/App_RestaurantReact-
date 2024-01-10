@@ -1,14 +1,15 @@
 // Libraryes
 import { Link } from "react-scroll";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./HorizontalNav.scss";
-import secciones from "../../json/Json";
+import datos from "../../json/Json";
 
 function HorizontalNav() {
   const [isFixed, setIsFixed] = useState(false);
   const [firstClick, setFirstClick] = useState(true);
-  const observerRef = useRef<null | MutationObserver>(null);
+  // const [claseActivaRef, setClaseActivaRef] = useState("");
 
+  console.log(datos);
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -34,34 +35,17 @@ function HorizontalNav() {
     }
   };
 
-  useEffect(() => {
-    const targetNode = document.getElementById("navUl");
+  // useEffect(() => {
+  //   const targetElement = document.getElementById("navUl");
+  //   console.log("TE");
 
-    if (!targetNode) {
-      return;
-    }
-
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        const addedNodes = Array.from(mutation.addedNodes) as HTMLElement[];
-        addedNodes.forEach((node) => {
-          if (node.classList.contains("active")) {
-            despHorizontal(node.id);
-          }
-        });
-      });
-    });
-
-    const config = { childList: true, subtree: true };
-    observer.observe(targetNode, config);
-    observerRef.current = observer;
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, []); // Ejecutar el efecto solo una vez al montar el componente
+  //   if (targetElement != null) {
+  //     const activeElement = [...targetElement.children].forEach(
+  //       (child) => console.log(child.className)
+  //       child.className === "active" ? setClaseActivaRef(child.id) : 0
+  //     );
+  //   }
+  // }, []);
 
   const despHorizontal = (key: string) => {
     if (key != null) {
@@ -85,7 +69,7 @@ function HorizontalNav() {
     <div className={`contHorNav ${isFixed ? "fixed" : ""}`}>
       <div>
         <ul className="navUl" id="navUl">
-          {secciones.map((seccion, index) => (
+          {datos.secciones.map((seccion, index) => (
             <li className="nav-item" id={seccion.key} key={seccion.id}>
               <Link
                 to={`categoria${index}`}

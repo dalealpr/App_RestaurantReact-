@@ -101,6 +101,11 @@ function NavBarMovile() {
                 Contacto
               </a>
             </li>
+            <li className="contLi">
+              <a className="contA" onClick={handleNavButtonClick} href="#">
+                Sugerencias
+              </a>
+            </li>
           </ul>
         </div>
       </nav>

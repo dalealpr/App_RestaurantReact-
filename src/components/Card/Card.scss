@@ -1,0 +1,47 @@
+.cardCont{
+    margin: 25px 0;
+    padding: 15px;
+    height: 190px;
+    border: 1px solid rgb(144, 144, 144);
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns:2fr 1fr; 
+    gap: 10px; 
+
+    .cardImgCont{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        .cardImg {
+            width:100% ;
+            border-radius: 10px;
+            background-color: bisque;
+          }
+    }
+
+    
+      .cardText {
+        padding: 10px; /* Espaciado interno para el contenido de texto */
+        color: white;
+
+        .cardTitle {
+            font-size: 1.2em;
+            font-weight: bold;
+          }
+        
+          .cardP {
+            font-size: 15px;
+            margin: 13px 0;
+            height:100px;
+          }
+
+          .cardPrice {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--color-background-secondary); /* Puedes ajustar el color según tu preferencia */
+          }
+      }
+}
