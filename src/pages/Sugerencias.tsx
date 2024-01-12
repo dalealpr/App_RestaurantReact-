@@ -28,13 +28,7 @@ function Sugerencias() {
           <label className="labelFormS" htmlFor="">
             Sugerencias *
           </label>
-          <textarea
-            className="textAFormS"
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
+          <textarea className="textAFormS" name="" id=""></textarea>
         </div>
         <button className="btnFormSugerencias">Enviar</button>
       </form>
