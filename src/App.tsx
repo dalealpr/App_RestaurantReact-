@@ -1,17 +1,24 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Header from "./components/Header/Header";
-import HorizontalNav from "./components/HorizontalNav/HorizontalNav";
 import NavBar from "./components/NavBar/NavBar";
-import Secciones from "./components/Secciones/Secciones";
+import Home from "./pages/Home";
+import Contacto from "./pages/Contacto";
+import QuienesSomos from "./pages/QuienesSomos";
+import SedesHorarios from "./pages/SedesHorarios";
+import Sugerencias from "./pages/Sugerencias";
 
 function App() {
   return (
-    <>
+    <Router>
       <NavBar />
-      <Header />
-      <HorizontalNav />
-      <Secciones />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/quienessomos" element={<QuienesSomos />} />
+        <Route path="/sedesyhorarios" element={<SedesHorarios />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/sugerencias" element={<Sugerencias />} />
+      </Routes>
+    </Router>
   );
 }
 

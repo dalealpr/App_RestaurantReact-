@@ -1,6 +1,7 @@
 //Styles
 import "./NavBarMovile.scss";
 // Library Animated hamburger
+import { Link, useLocation } from "react-router-dom";
 import { Squash as Hamburger } from "hamburger-react";
 //Icons
 import SearchIcon from "@mui/icons-material/Search";
@@ -11,7 +12,14 @@ function NavBarMovile() {
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(false);
 
+  // Localizacion ruta
+  const location = useLocation();
+
   const navRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    setIsSearchVisible(location.pathname === "/");
+  }, [location.pathname]);
 
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
@@ -48,63 +56,87 @@ function NavBarMovile() {
           <Hamburger size={23} color="white" toggled={isNavVisible} />
         </button>
 
-        {/* Barra de busqueda */}
-        <div className={`buscadorCont ${isSearchVisible ? "" : "visible"}`}>
-          <SearchIcon style={{ color: "white", paddingLeft: "10px" }} />
-          <input
-            type="text"
-            name="search"
-            placeholder="Buscar..."
-            className="inputSearch"
-            autoComplete="off"
-          />
-          <button
-            onClick={handleSearchButtonClick}
-            style={{ display: isSearchVisible ? "none" : "block" }}
-          >
-            <CloseIcon
-              style={{ color: "white", paddingRight: "10px" }}
-              className="iconClose"
-            />
-          </button>
-        </div>
-
-        {/* Boton Buscar */}
-        <button
-          className="btn-search"
-          onClick={handleSearchButtonClick}
-          style={{ display: isSearchVisible ? "block" : "none" }}
-        >
-          <SearchIcon style={{ color: "white" }} className="iconSearch" />
-        </button>
+        {location.pathname === "/" ? (
+          <>
+            <div
+              className={`buscadorCont ${!isSearchVisible ? "" : "visible"}`}
+            >
+              <SearchIcon style={{ color: "white", paddingLeft: "10px" }} />
+              <input
+                type="text"
+                name="search"
+                placeholder="Buscar..."
+                className="inputSearch"
+                autoComplete="off"
+              />
+              <button
+                onClick={handleSearchButtonClick}
+                style={{ display: !isSearchVisible ? "none" : "block" }}
+              >
+                <CloseIcon
+                  style={{ color: "white", paddingRight: "10px" }}
+                  className="iconClose"
+                />
+              </button>
+              {/* Boton Buscar */}
+            </div>
+            <button
+              className="btn-search"
+              onClick={handleSearchButtonClick}
+              style={{ display: !isSearchVisible ? "block" : "none" }}
+            >
+              <SearchIcon style={{ color: "white" }} className="iconSearch" />
+            </button>
+          </>
+        ) : (
+          <Link to="/" className="homeButton">
+            <p className="cartaBtn">Carta</p>
+          </Link>
+        )}
 
         {/* Menu Desplegable */}
         <div className={`contUl ${isNavVisible ? "visible" : ""}`}>
           <ul>
             <li className="contLi">
-              <a className="contA" onClick={handleNavButtonClick} href="#">
+              <Link className="contA" onClick={handleNavButtonClick} to="/">
                 Inicio
-              </a>
+              </Link>
             </li>
             <li className="contLi">
-              <a className="contA" onClick={handleNavButtonClick} href="#">
+              <Link
+                className="contA"
+                onClick={handleNavButtonClick}
+                to="/quienessomos"
+              >
                 Quienes somos
-              </a>
+              </Link>
             </li>
             <li className="contLi">
-              <a className="contA" onClick={handleNavButtonClick} href="#">
+              <Link
+                className="contA"
+                onClick={handleNavButtonClick}
+                to="/sedesyhorarios"
+              >
                 Sedes y Horarios
-              </a>
+              </Link>
             </li>
             <li className="contLi">
-              <a className="contA" onClick={handleNavButtonClick} href="#">
-                Contacto
-              </a>
+              <Link
+                className="contA"
+                onClick={handleNavButtonClick}
+                to="/contacto"
+              >
+                Redes Sociales
+              </Link>
             </li>
             <li className="contLi">
-              <a className="contA" onClick={handleNavButtonClick} href="#">
+              <Link
+                className="contA"
+                onClick={handleNavButtonClick}
+                to="/sugerencias"
+              >
                 Sugerencias
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

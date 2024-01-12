@@ -9,7 +9,6 @@ function HorizontalNav() {
   const [firstClick, setFirstClick] = useState(true);
   // const [claseActivaRef, setClaseActivaRef] = useState("");
 
-  console.log(datos);
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
