@@ -8,4 +8,62 @@
         color: white;
         font-size: 26px;
     }
+
+    .formSugerencias{
+        margin-top: 25px;
+        padding: 0 20px;
+
+        .contLabelInput{
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .labelFormS{
+                font-weight: 700;
+                font-size: 17px;
+                margin-bottom: 7px;
+            }
+
+            .inputFormS{  
+                height: 32px;
+                border-radius: 4px;
+                background-color: #3b3b3b;
+                font-size: 15px;
+                padding-left: 10px;
+                color: white;
+            }
+
+            .inputFormS:focus{  
+                border: 1px solid #858585;
+                color: white;
+            }
+
+            .textAFormS{
+                height: 190px;
+                border: none;
+                border-radius: 4px;
+                background-color: #3b3b3b;
+                resize: none;
+            }
+
+            .textAFormS:focus{ 
+                padding: 10px; 
+                border: 1px solid #858585;
+                color: white;
+                outline: none;
+            }
+            
+        }
+    }
+    .btnFormSugerencias{
+        width: 100%;
+        height: 35px;
+        background-color: var(--color-background-secondary);
+        color: black;
+        margin-top: 20px;
+        font-weight: 700;
+        border-radius: 4px;
+        text-align: center;
+    }
 }
