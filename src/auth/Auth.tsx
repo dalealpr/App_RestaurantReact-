@@ -1,4 +1,3 @@
-import React from "react";
 import Login from "./pages/Login";
 //import HomeLogin from "./pages/HomeDashboard";
 import "./Auth.scss";
