@@ -9,9 +9,18 @@ import { useMedia } from "react-use";
 function NavBar() {
   const isMobile = useMedia("(min-width: 900px)");
 
-  return (
+  const allowedRoutes = [
+    "/",
+    "/quienessomos",
+    "/sedesyhorarios",
+    "/contacto",
+    "/sugerencias",
+  ];
+  const shouldShowNavBar = allowedRoutes.includes(location.pathname);
+
+  return shouldShowNavBar ? (
     <div className="contNav">{isMobile ? <NavBarWeb /> : <NavBarMovile />}</div>
-  );
+  ) : null;
 }
 
 export default NavBar;

@@ -6,6 +6,7 @@ import Contacto from "./pages/Contacto";
 import QuienesSomos from "./pages/QuienesSomos";
 import SedesHorarios from "./pages/SedesHorarios";
 import Sugerencias from "./pages/Sugerencias";
+import Auth from "./auth/Auth";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/sedesyhorarios" element={<SedesHorarios />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/sugerencias" element={<Sugerencias />} />
+        <Route path="/login" element={<Auth />} />
       </Routes>
     </Router>
   );

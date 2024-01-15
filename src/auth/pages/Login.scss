@@ -1,0 +1,52 @@
+.loginCont{
+    height: 100vh;
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .loginForm{
+        width: 70%;
+        background-color: white;
+        border-radius: 15px;
+        padding: 20px 30px;
+
+        .titleLogin{
+            width: 100%;
+            margin: 10px 0 40px 0;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .contLabelInput{
+            display: flex;
+            flex-direction: column;
+
+            .labelFormS{
+                margin-bottom: 5px;
+            }
+ 
+            .inputFormS{
+                border: 1px solid #cfcfcf;
+                border-radius: 5px;
+                font-size: 15px;
+                padding: 7px 10px;
+                margin-bottom: 25px;
+            }
+
+        }
+        
+        .btnFormLogin{
+            width: 100%;
+            height: 38px;
+            margin: 25px 0;
+            background-color: var(--color-background-secondary);
+            border-radius: 7px;
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+}
+
